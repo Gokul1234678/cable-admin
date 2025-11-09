@@ -1,0 +1,152 @@
+/* ========= Base Layout ========= */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ========= Header ========= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background-color: #e63946;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c62828;
+}
+
+/* ========= Main Section ========= */
+.main {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ========= Sidebar ========= */
+.sidebar {
+  width: 240px;
+  background-color: #2b2b2b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.sidebar .link {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.95rem;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar .link:hover {
+  background-color: #3d3d3d;
+  color: #fff;
+}
+
+.sidebar .link.active {
+  background-color: #444;
+  color: #fff;
+  border-left: 4px solid #00bcd4;
+}
+
+/* ========= Content Area ========= */
+.content {
+  flex: 1;
+  background-color: #fff;
+  padding: 2rem;
+  overflow-y: auto;
+  transition: 0.3s ease;
+}
+
+/* ========= Responsive Styles ========= */
+
+/* 📱 Tablets and below */
+@media (max-width: 992px) {
+  .header h1 {
+    font-size: 1.1rem;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar .link {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Mobile view */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+
+  .sidebar .link {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    text-align: center;
+    flex: 1;
+    padding: 10px 0;
+  }
+
+  .sidebar .link.active {
+    border-bottom: 3px solid #00bcd4;
+    background-color: #333;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}
+
+/* 📱 Extra small screens */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .sidebar .link {
+    font-size: 0.85rem;
+  }
+}
